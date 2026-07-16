@@ -1,0 +1,11 @@
+# Regression pack — auth cases (regression = suite, not type:)
+id: regression-auth
+title: Regression — admin login
+target: CTR-admin-web
+refs:
+  component: CMP-01
+  scenario: SC-LOGIN
+cases:
+  - TC-LOGIN-VALID
+  - TC-LOGIN-BAD-PASSWORD
+  - TC-LOGIN-EMPTY-EMAIL

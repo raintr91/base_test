@@ -1,0 +1,24 @@
+{
+  "version": 1,
+  "bundles": {
+    "core": [
+      ".cursor/extracts/core/agent-discipline.md"
+    ],
+    "testcase": [
+      ".cursor/extracts/core/agent-discipline.md",
+      ".cursor/extracts/plans/readiness.md"
+    ],
+    "grill-testcase": [
+      ".cursor/extracts/core/agent-discipline.md",
+      ".cursor/extracts/plans/readiness.md",
+      ".cursor/extracts/verify-gate.md"
+    ],
+    "platform-ai": [
+      ".cursor/extracts/extract-registry.json"
+    ],
+    "platform-base": [
+      ".cursor/extracts/core/agent-discipline.md",
+      ".cursor/extracts/plans/readiness.md"
+    ]
+  }
+}

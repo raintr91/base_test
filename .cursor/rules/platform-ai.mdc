@@ -1,0 +1,11 @@
+---
+description: AI harness bias — plans lane (base-tests); app/Playwright only when asked elsewhere
+alwaysApply: true
+---
+
+# Platform AI
+
+- **Harness SSOT:** `.cursor/` tại **base-tests** (Plans).
+- **Lane (một chat):** Plans = `/testcase` · `/grill-testcase` · `/platform-base` — **không** nhồi FE Playwright hay docs `/spec` trong cùng turn.
+- **Plans only:** YAML/MD + `cases:render`. Playwright → FE; design → base-docs.
+- Chi tiết bảo trì harness: `/platform-ai`.

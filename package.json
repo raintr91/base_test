@@ -1,0 +1,27 @@
+{
+  "name": "base-tests",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "cases:render": "node scripts/cases/render-cases.mjs",
+    "check:plans": "node scripts/cases/check-plans.mjs",
+    "check:coverage": "node scripts/cases/check-coverage.mjs",
+    "check:pilot": "node -e \"const fs=require('fs'); const a=['cases/W-AD-AUTH-001/TC-LOGIN-VALID.yaml','suites/smoke.yaml','scenarios/CMP-01-auth/SC-LOGIN.md','targets/CTR-admin-web.md','catalog/lexicon/testcase-taxonomy.en.txt','catalog/locale.yaml','landscape/CAP-admin.md','templates/TC.example.yaml']; for (const f of a) if (!fs.existsSync(f)) { console.error('missing', f); process.exit(1);} console.log('OK_R3_pilot');\"",
+    "docs:render": "pnpm cases:render",
+    "docs:dev": "pnpm cases:render && vitepress dev . --host 0.0.0.0",
+    "docs:build": "pnpm cases:render && vitepress build .",
+    "docs:preview": "vitepress preview . --host 0.0.0.0"
+  },
+  "devDependencies": {
+    "@braintree/sanitize-url": "^7.1.2",
+    "cytoscape": "^3.34.0",
+    "cytoscape-cose-bilkent": "^4.1.0",
+    "dayjs": "^1.11.21",
+    "debug": "^4.4.3",
+    "mermaid": "^11.16.0",
+    "vitepress": "^1.6.4",
+    "vitepress-mermaid-renderer": "^1.1.28",
+    "vitepress-plugin-mermaid": "^2.0.17",
+    "yaml": "^2.9.0"
+  }
+}

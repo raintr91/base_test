@@ -1,0 +1,204 @@
+# Lexicon only — NOT SSOT of testcase YAML (cases/ suites/ remain SSOT).
+# MCP indexes locally for type / dimensions / scenario suggest; do NOT dump full file into cloud.
+# Platform BASE EN terms only (R3.1).
+#
+# Path: base-tests/catalog/lexicon/testcase-taxonomy.en.txt
+# Former name: catalog/test_case_vocabulary.txt
+#
+================================================================================
+ID / STRUCTURE PREFIXES (align design C4 + docs Code IDs)
+================================================================================
+LND-          Test landscape doc
+CTX-          Test context (E2E boundary)
+CTR-          Test target (client under test ≈ design Container)
+CMP-          Link to design Component
+SC-           Scenario (Level 1 Business)
+TC-           Test case (Level 3)
+W- / M- / D- / J-   refs.screen (design Code UI ids)
+API-          refs only when E2E cites an API id — suites stay on FE/BE code as needed
+suites/       smoke · regression-* · nightly  (packs, not a case type)
+
+================================================================================
+LEVEL 1 — TEST SCENARIO (Business areas under a feature)
+================================================================================
+Example tree shape (rename leaves per product; keep as vocabulary of common areas):
+
+Authentication
+Authorization
+Validation
+Security
+Session
+Performance
+Compatibility
+Accessibility
+Error Handling
+Localization
+Usability
+Data Integrity
+Workflow
+Permissions
+Notifications
+Import / Export
+Search / Filter
+Audit / Logging
+
+================================================================================
+LEVEL 2 — TEST CATEGORIES (under a Scenario)
+================================================================================
+Validation:
+  Required field
+  Format validation
+  Length validation
+  Boundary validation
+  Business validation
+
+Authentication:
+  Valid credential
+  Invalid credential
+  Locked account
+  Disabled account
+  Expired password / session
+
+Authorization / Permission:
+  Role allow
+  Role deny
+  Privilege escalation attempt
+
+Workflow / State:
+  Happy path transition
+  Illegal transition
+  Concurrent edit
+
+(Extend per Scenario — do not explode folders; store as category: on case YAML)
+
+================================================================================
+LEVEL 3 — TEST CASE NAMING
+================================================================================
+Prefer:
+  <Action> + <Condition> + <Expected Result>
+
+Examples:
+  Login with valid credentials should succeed
+  Login with invalid password should fail
+  Create record with duplicate code should be rejected
+  Delete inactive user should succeed
+  Operator should not delete record
+
+BDD style (optional in steps/title):
+  Given … When … Then …
+
+Automation method style (FE script, not hub SSOT):
+  should_login_successfully_with_valid_credentials
+  should_not_login_with_wrong_password
+  should_return_validation_error_when_name_is_empty
+
+Avoid:
+  TC001 · Login 1 · Login 2  (opaque)
+
+Case id pattern:
+  TC-{DOMAIN}-{SLUG}   e.g. TC-LOGIN-VALID · TC-LOGIN-BAD-PASSWORD
+
+================================================================================
+COVERAGE FACETS (primary field coverage: — replaces legacy type:)
+================================================================================
+# Prefer coverage[] on every TC. Do NOT use type: on base hub.
+
+happy                 Successful path / intended outcome
+validation            Input / form / business validation reject
+boundary              Min/max / neighbors
+authorization         Role allow/deny / privilege
+state                 Legal/illegal transitions
+exception             Errors, timeouts, 4xx/5xx surfaced in UI
+concurrency           Multi-user / multi-tab (E2E-selective)
+audit                 Audit / logging visible outcomes
+accessibility         a11y / axe / keyboard / contrast (pair with a11y: block)
+
+# Historical type: vocabulary below — DO NOT author new cases with type:
+positive              Happy path
+negative              Invalid input / rejected ops
+boundary              Boundary value analysis (min/max/neighbors)
+equivalence           Equivalence partition representatives
+edge                  Empty, null, whitespace, emoji, CJK, RTL, very long, special chars
+business-rule         Domain invariants / policy rules
+state-transition      Legal/illegal status changes
+permission            RBAC / role matrix
+workflow              Multi-step end-to-end user journeys
+integration           Cross-system via UI (prefer tagging; deep API suite → code repos)
+error-handling        Timeouts, 4xx/5xx surfaced in UI, retry UX
+recovery              Resume after failure / reconnect UX
+concurrency           Multi-user / multi-tab / lock contention (E2E-selective)
+performance           Perceived UI load (deep perf → specialized tooling/code)
+security              XSS/CSRF cues in UI, expired session UX (deep sec → specialized)
+compatibility         Browsers / OS (often suite + CI matrix)
+accessibility         Keyboard, screen reader, contrast, focus
+localization          Timezone, currency, language, date format
+data-integrity        UI-visible consistency after ops (deep DB → BE tests)
+regression            NOT a type — use suites/*.yaml packs that re-run selected TCs
+
+================================================================================
+THREE FILTER DIMENSIONS (general BASE — product fills values)
+================================================================================
+# Use on case YAML dimensions: — for filtering suites; keep INDUSTRY-AGNOSTIC.
+
+business:
+  crud
+  workflow
+  permission
+  business-rule
+
+technical:
+  validation
+  ui
+  api          # tag only when E2E touches API via UI; API unit suites stay in BE code
+  database     # tag only if asserted via UI/audit; deep DB tests → BE
+  messaging    # optional tag; consumer tests usually → code
+  realtime
+  file-storage
+  offline
+  retry
+
+quality:
+  security
+  performance
+  reliability
+  recovery
+  audit
+  logging
+  monitoring
+  accessibility
+  localization
+  compatibility
+
+================================================================================
+CASE YAML FIELD VOCABULARY (english keys)
+================================================================================
+id
+title
+summary · story          # member-facing (locale from catalog/locale.yaml)
+refs.capability · refs.component|feature · refs.rule · refs.scenario · refs.example · refs.screen · refs.target
+coverage                 # facets above — required
+# type                   # REMOVED on base — use coverage
+priority                 # high | medium | low
+preconditions
+testData
+steps                    # optional as:/label: for narrative
+expected
+postcondition
+automation               # manual | automated
+tags                     # smoke, regression, e2e, ui, a11y, #e2e:a11y-wcag, …
+dimensions.business
+dimensions.technical
+dimensions.quality
+a11y                     # optional plan for @axe-core/playwright on FE
+feature · genType · route · testIds   # FE bridge
+
+================================================================================
+WHERE AUTOMATION LIVES (reminder)
+================================================================================
+Hub ({product}-tests):     YAML + Markdown plans only
+FE / client code:          Playwright (or similar) generated/hand scripts
+BE / service code:         Unit + API tests
+Small projects (V2):       Plans may stay beside feature docs — skip hub
+
+================================================================================
+END

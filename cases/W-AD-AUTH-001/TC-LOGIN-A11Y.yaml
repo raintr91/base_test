@@ -1,0 +1,58 @@
+id: TC-LOGIN-A11Y
+title: Authenticated admin shell should have no serious WCAG A/AA axe violations
+summary: Sau khi đăng nhập thành công, khu vực admin không còn lỗi accessibility nghiêm trọng (WCAG 2A/2AA).
+story: |
+  Given đã đăng nhập thành công vào admin
+  When chạy kiểm tra accessibility (axe) trên shell
+  Then không còn violation mức critical/serious theo tag wcag2a/wcag2aa
+refs:
+  capability: CAP-admin
+  component: CMP-01
+  rule: RUL-01-login-valid-creds
+  scenario: SC-LOGIN
+  example: EX-LOGIN-04
+  screen: W-AD-AUTH-001
+  target: CTR-admin-web
+coverage: [accessibility]
+priority: medium
+automation: automated
+tags: [a11y, regression, e2e, ui, "#e2e:a11y-wcag"]
+dimensions:
+  business: [workflow]
+  technical: [ui]
+  quality: [accessibility]
+preconditions:
+  - Đã có tài khoản operator hợp lệ (reuse happy path hoặc storageState)
+testData:
+  email: admin@example.com
+  password: "********"
+steps:
+  - as: Đăng nhập thành công (happy path)
+    action: goto
+    path: /login
+  - action: fill
+    testId: auth-login-email-input
+    value: "{{email}}"
+  - action: fill
+    testId: auth-login-password-input
+    value: "{{password}}"
+  - action: click
+    testId: auth-login-submit-btn
+expected: Axe không báo critical/serious trên shell đã đăng nhập
+postcondition: []
+a11y:
+  tags: [wcag2a, wcag2aa]
+  include: []
+  exclude: []
+  disableRules: []
+
+feature: ad-auth-login
+genType: e2e
+route:
+  path: /login
+  auth: guest
+testIds:
+  required:
+    - auth-login-email-input
+    - auth-login-password-input
+    - auth-login-submit-btn

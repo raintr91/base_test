@@ -1,0 +1,23 @@
+# Member-facing render locale (not full i18n)
+# Content (summary/story) is authored in this locale; YAML keys stay English.
+memberLocale: vi
+
+headings:
+  vi:
+    preconditions: Trước khi làm
+    testData: Dữ liệu dùng thử
+    steps: Các bước
+    expected: Kết quả mong đợi
+    postcondition: Sau khi xong
+    technical: Chi tiết kỹ thuật (automation)
+    coverage: Bao phủ
+    summary: Tóm tắt
+  en:
+    preconditions: Preconditions
+    testData: Test data
+    steps: Steps
+    expected: Expected
+    postcondition: Postcondition
+    technical: Technical details (automation)
+    coverage: Coverage
+    summary: Summary

@@ -1,0 +1,6 @@
+# A11y pack — axe plans (implement on FE with @axe-core/playwright)
+id: a11y
+title: Accessibility pack — auth shell
+target: CTR-admin-web
+cases:
+  - TC-LOGIN-A11Y

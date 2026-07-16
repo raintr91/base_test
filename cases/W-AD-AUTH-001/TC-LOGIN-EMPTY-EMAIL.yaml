@@ -1,0 +1,50 @@
+id: TC-LOGIN-EMPTY-EMAIL
+title: Login with empty email should block submit with validation
+summary: Để trống email thì form chặn gửi; không tạo phiên đăng nhập.
+story: |
+  Given đang ở màn đăng nhập
+  When để trống email (có thể đã nhập mật khẩu) và bấm Đăng nhập
+  Then thấy lỗi email và không gọi đăng nhập thành công
+refs:
+  capability: CAP-admin
+  component: CMP-01
+  rule: RUL-01-login-email-required
+  scenario: SC-LOGIN
+  example: EX-LOGIN-03
+  screen: W-AD-AUTH-001
+  target: CTR-admin-web
+coverage: [validation]
+priority: medium
+automation: automated
+tags: [regression, e2e, ui]
+dimensions:
+  business: []
+  technical: [validation, ui]
+  quality: []
+preconditions: []
+testData:
+  email: ""
+  password: "********"
+steps:
+  - as: Mở trang đăng nhập
+    action: goto
+    path: /login
+  - as: Nhập mật khẩu (bỏ trống email)
+    action: fill
+    testId: auth-login-password-input
+    value: "{{password}}"
+  - as: Bấm Đăng nhập
+    action: click
+    testId: auth-login-submit-btn
+expected: Lỗi validation trên email; không có session
+postcondition: []
+
+feature: ad-auth-login
+genType: e2e
+route:
+  path: /login
+  auth: guest
+testIds:
+  required:
+    - auth-login-email-input
+    - auth-login-submit-btn

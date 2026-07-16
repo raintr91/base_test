@@ -1,0 +1,21 @@
+---
+description: Command router — TESTS lane (plans SC/TC/suites). Playwright → FE; design → base-docs.
+alwaysApply: false
+---
+
+# Team AI Flow (router) — tests hub
+
+| Command | Skill |
+|---------|-------|
+| `/testcase` | `testcase/SKILL.md` |
+| `/grill-testcase` | `grill-testcase/SKILL.md` |
+| `/platform-ai` | `platform-ai/SKILL.md` |
+| `/platform-base` | `platform-base/SKILL.md` |
+
+**Docs-first:** rule `plans-docs-first.mdc` · tracking `landscape/NOTE-testing-architecture.md`
+
+**Not here:** `/spec` · grill-docs → **base-docs**. `/test` · `/grill-test` (Playwright) → **FE**.
+
+Profile `tests` skills: `platform-ai` · `platform-base` · `testcase` · `grill-testcase`.
+
+Handbook: `../base-docs/platform/toolchain/TESTS-HUB.md`

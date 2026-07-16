@@ -1,0 +1,38 @@
+{
+  "version": 1,
+  "description": "Tests hub index — plans SSOT; Playwright output stays on FE",
+  "capabilities": {
+    "CAP-admin": "landscape/CAP-admin.md"
+  },
+  "codeIds": {
+    "W-AD-AUTH-001": "cases/W-AD-AUTH-001",
+    "TC-LOGIN-VALID": "cases/W-AD-AUTH-001/TC-LOGIN-VALID.yaml",
+    "TC-LOGIN-BAD-PASSWORD": "cases/W-AD-AUTH-001/TC-LOGIN-BAD-PASSWORD.yaml",
+    "TC-LOGIN-EMPTY-EMAIL": "cases/W-AD-AUTH-001/TC-LOGIN-EMPTY-EMAIL.yaml",
+    "TC-LOGIN-A11Y": "cases/W-AD-AUTH-001/TC-LOGIN-A11Y.yaml"
+  },
+  "scenarios": {
+    "SC-LOGIN": {
+      "capability": "CAP-admin",
+      "component": "CMP-01",
+      "screen": "W-AD-AUTH-001",
+      "cases": [
+        "TC-LOGIN-VALID",
+        "TC-LOGIN-BAD-PASSWORD",
+        "TC-LOGIN-EMPTY-EMAIL",
+        "TC-LOGIN-A11Y"
+      ]
+    }
+  },
+  "suites": {
+    "smoke": "suites/smoke.yaml",
+    "regression-auth": "suites/regression-auth.yaml",
+    "a11y": "suites/a11y.yaml"
+  },
+  "targets": {
+    "CTR-admin-web": {
+      "feProject": "portal",
+      "screens": ["W-AD-AUTH-001"]
+    }
+  }
+}

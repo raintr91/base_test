@@ -1,0 +1,58 @@
+id: TC-LOGIN-VALID
+title: Login with valid credentials should succeed
+summary: Operator đăng nhập đúng email và mật khẩu thì vào được khu vực admin.
+story: |
+  Given đã có tài khoản operator hợp lệ
+  When nhập đúng email/mật khẩu và đăng nhập
+  Then thấy shell admin đã xác thực
+refs:
+  capability: CAP-admin
+  component: CMP-01
+  rule: RUL-01-login-valid-creds
+  scenario: SC-LOGIN
+  example: EX-LOGIN-01
+  screen: W-AD-AUTH-001
+  target: CTR-admin-web
+  api: API-AD-AUTH-001
+coverage: [happy]
+priority: high
+automation: automated
+tags: [smoke, regression, e2e, ui]
+dimensions:
+  business: [workflow]
+  technical: [ui, validation]
+  quality: []
+preconditions:
+  - Đã có tài khoản operator còn hiệu lực
+testData:
+  email: admin@example.com
+  password: "********"
+steps:
+  - as: Mở trang đăng nhập
+    action: goto
+    path: /login
+  - as: Nhập email hợp lệ
+    action: fill
+    testId: auth-login-email-input
+    value: "{{email}}"
+  - as: Nhập mật khẩu đúng
+    action: fill
+    testId: auth-login-password-input
+    value: "{{password}}"
+  - as: Bấm Đăng nhập
+    action: click
+    testId: auth-login-submit-btn
+expected: Thấy khu vực admin đã đăng nhập
+postcondition:
+  - Phiên đăng nhập được thiết lập
+
+feature: ad-auth-login
+genType: e2e
+route:
+  path: /login
+  auth: guest
+testIds:
+  required:
+    - auth-login-email-input
+    - auth-login-password-input
+    - auth-login-submit-btn

@@ -1,0 +1,2 @@
+# Moved (R3.1) → catalog/lexicon/testcase-taxonomy.en.txt
+# Edit the lexicon on that path only.

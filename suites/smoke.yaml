@@ -1,0 +1,6 @@
+# Smoke pack — selected case ids (not a case type)
+id: smoke
+title: Smoke pack — auth happy path
+target: CTR-admin-web
+cases:
+  - TC-LOGIN-VALID
