@@ -4,8 +4,9 @@ node_modules/
 .harness/progress.md
 .harness/feature_list.json
 platform-repos.local.json
-.cursor/team-projects.local.json
+legacy-repos.local.json
 .cursor/platform-repos.local.json
+.cursor/legacy-repos.local.json
 
 .kilo/skills/
 .kilo/instructions/
