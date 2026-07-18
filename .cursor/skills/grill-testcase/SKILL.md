@@ -1,33 +1,24 @@
 ---
 name: grill-testcase
-description: >-
-  /grill-testcase — audit E2E plan YAML/MD on base-tests (not Playwright code).
+description: /grill-testcase — audit E2E plan YAML/MD on the tests hub.
 disable-model-invocation: true
 ---
 
-# /grill-testcase — Plans audit
+# /grill-testcase
 
-After `/testcase`. **Do not** edit `tests/e2e/` here — that is FE `/grill-test`.
+**Owner:** Testkit (`--type=tests`)
 
-## Phân loại finding
+Audit plans only. Spec holes hand off to docs-hub `/update-spec` (Bundlekit), never invent acceptance.
 
-| Loại | Việc |
-|------|------|
-| `coverage_gap` | Docs đã rõ, thiếu TC/facet → được thêm/sửa YAML trên hub |
-| `spec_hole` / `rule_unclear` | **STOP** → copy `templates/SPEC-HOLE-HANDOFF.example.md` sang chat **base-docs** + `/update-spec`; cấm vá TC |
+## Accelerators (optional)
 
-Không sync ngược: sửa TC rồi bắt docs theo.
+```text
+if ArtifactGraph available: coverage/gap slice
+else: local deterministic coverage/search over targeted plan/docs evidence
+```
 
-## Checks
-
-- [ ] `coverage[]` dùng enum lexicon (không dùng `type`)
-- [ ] `refs.capability` / feature / scenario / screen / target resolve; `refs.rule` nếu có → tồn tại trên docs
-- [ ] `summary` hoặc `story` (VI) đủ member đọc; MD render tươi
-- [ ] Bridge FE đủ: `genType`, `route`, `testIds` (và `a11y` nếu coverage có accessibility)
-- [ ] Suites + `tests-index.json` khớp ids
-- [ ] `pnpm check:plans` · `pnpm cases:render` OK
-- [ ] Không edit design bundle tại lane này
-
-## Handoff
-
-FE `/test` → `testcase:gen --id …` → `/grill-test` (± axe).
+Use one stable `runId` per run. When ArtifactGraph is missing, finish the local
+fallback before emitting exactly one `testkit.missing-optional` event for that
+`runId` + `artifactgraph`; retries must not emit again. Conform to
+`.cursor/schemas/testkit/missing-optional-event.schema.json` and include only
+actual successful `fileReads` and exact raw `contextBytes`, never estimates.

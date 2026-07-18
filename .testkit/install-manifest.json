@@ -1,0 +1,42 @@
+{
+  "schemaVersion": 1,
+  "package": "@platform/testkit",
+  "packageVersion": "0.2.4",
+  "type": "tests",
+  "toolApi": 1,
+  "harnessApi": 1,
+  "files": {
+    ".cursor/extracts/plans/readiness.md": {
+      "source": "harness/tests/extracts/plans/readiness.md",
+      "sha256": "c635b3974950e5ea375e1b6a46259ba87796be33109dd13af3a3ba106aae37d1"
+    },
+    ".cursor/rules/plans-docs-first.mdc": {
+      "source": "harness/tests/rules/plans-docs-first.mdc",
+      "sha256": "c34751497ca074cf8eac530c9825a554389eb421435c7feef4335dcaa4d02ed2"
+    },
+    ".cursor/rules/testkit-optional-accelerators.mdc": {
+      "source": "harness/tests/rules/testkit-optional-accelerators.mdc",
+      "sha256": "d8cff159f1ec46960a778b62a54974df8b2df16d791875791f7f8cf20aa0e80d"
+    },
+    ".cursor/skills/grill-testcase/SKILL.md": {
+      "source": "harness/tests/skills/grill-testcase/SKILL.md",
+      "sha256": "e9a12fa338ad03fa5faa27460e6aec9d2e8df4ca17b5f9c108d3e97873ce0cdc"
+    },
+    ".cursor/skills/testcase/SKILL.md": {
+      "source": "harness/tests/skills/testcase/SKILL.md",
+      "sha256": "3998baef64c0c37393de3760c1140aac76ab29cd1dff83840fed2a08266cef5d"
+    },
+    ".cursor/templates/SC.example.md": {
+      "source": "harness/tests/templates/SC.example.md",
+      "sha256": "a7a06bee91c8695b6663eb0fa9df30163d3c6505cb6cb344f551b81b9f55761d"
+    },
+    ".cursor/templates/TC.example.yaml": {
+      "source": "harness/tests/templates/TC.example.yaml",
+      "sha256": "03de2f1655d755d52d5888bf84665308299f546746af679d4d46a71ca930d430"
+    },
+    ".cursor/schemas/testkit/missing-optional-event.schema.json": {
+      "source": "schemas/missing-optional-event.schema.json",
+      "sha256": "021c0cbd9436ce26a115d556ac06c27e0551a25bb113e5d8e1c7bedb6076bcb0"
+    }
+  }
+}
