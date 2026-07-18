@@ -45,4 +45,4 @@ pnpm testcase:gen --id TC-LOGIN-VALID
 - `cases/W-AD-AUTH-001/TC-*.yaml`
 - `suites/smoke.yaml` · `a11y.yaml` · `regression-auth.yaml`
 
-Handbook: [`../base-docs/platform/toolchain/TESTS-HUB.md`](../base-docs/platform/toolchain/TESTS-HUB.md)
+Handbook: [`docs/TESTS-HUB.md`](docs/TESTS-HUB.md) · [`docs/HUBS.md`](docs/HUBS.md)

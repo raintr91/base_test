@@ -18,4 +18,4 @@ alwaysApply: false
 
 Profile `tests` skills: `platform-ai` · `platform-base` · `testcase` · `grill-testcase`.
 
-Handbook: `../base-docs/platform/toolchain/TESTS-HUB.md`
+Handbook: `docs/TESTS-HUB.md`

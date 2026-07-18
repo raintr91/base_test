@@ -140,7 +140,7 @@ CAP-* (bắt buộc)
 ## Tham chiếu
 
 - Hub: `catalog/lexicon/testcase-taxonomy.en.txt` · `scripts/cases/render-cases.mjs` · pilot `cases/W-AD-AUTH-001/`
-- Docs: `../base-docs/platform/toolchain/TESTS-HUB.md`
+- Docs: `docs/TESTS-HUB.md`
 - Pyramid: https://martinfowler.com/bliki/TestPyramid.html
 - Playwright: https://playwright.dev/docs/best-practices
 - Mattermost MD pattern: https://github.com/mattermost/mattermost-test-management

@@ -183,7 +183,7 @@ Lỗ spec? Copy [SPEC-HOLE-HANDOFF](/templates/SPEC-HOLE-HANDOFF.example) sang c
 
 | Chủ đề | Link |
 |--------|------|
-| Tests hub (toolchain) | Sibling repo: `base-docs/platform/toolchain/TESTS-HUB.md` |
+| Tests hub (toolchain) | Sibling repo: `docs/TESTS-HUB.md` |
 | Test Pyramid | [martinfowler.com — Test Pyramid](https://martinfowler.com/bliki/TestPyramid.html) |
 | Playwright best practices | [playwright.dev/docs/best-practices](https://playwright.dev/docs/best-practices) |
 | Axe + Playwright | [npm @axe-core/playwright](https://www.npmjs.com/package/@axe-core/playwright) |

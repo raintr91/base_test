@@ -34,7 +34,7 @@ Edit `.cursor/` tại **base-tests** (đúng lane Plans). Một chat = một lan
 | `/testcase` | author SC/TC/suites |
 | `/grill-testcase` | audit plans |
 
-Hub handbook: `../base-docs/platform/toolchain/TESTS-HUB.md` · router: `team-flow-router.mdc`.
+Hub handbook: `docs/TESTS-HUB.md` · router: `team-flow-router.mdc`.
 
 ## Done
 

@@ -12,4 +12,4 @@ Plans: `landscape/` · `contexts/` · `targets/` · `scenarios/` · `cases/` · 
 - Design (`/spec`, grill-docs) → **base-docs**
 - Playwright (`/test`, `/grill-test`, `testcase:gen`) → **FE** (portal, …)
 
-See `../base-docs/platform/toolchain/TESTS-HUB.md`.
+See `docs/TESTS-HUB.md` and `docs/HUBS.md`.
