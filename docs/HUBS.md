@@ -9,7 +9,7 @@
 
 ```bash
 cd <base-docs-checkout> && pnpm docs:dev          # design only (no testcase MD)
-cd <base-tests-checkout> && pnpm cases:render     # plan YAML → MD
+cd <base-tests-checkout> && testkit cases:render  # plan YAML → MD (after init: pnpm cases:render)
 cd <portal-checkout> && pnpm testcase:gen --id W-AD-AUTH-001
 ```
 

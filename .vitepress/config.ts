@@ -7,6 +7,9 @@ export default withMermaid(
     description: 'Plans hub — E2E / acceptance plans (YAML + MD). Member-first docs.',
     cleanUrls: true,
     ignoreDeadLinks: true,
+    rewrites: {
+      'README.md': 'index.md',
+    },
     srcExclude: [
       '**/node_modules/**',
       '**/scripts/**',
@@ -20,7 +23,6 @@ export default withMermaid(
       '**/*.yml',
       '**/catalog/lexicon/**',
       '**/catalog/test_case_vocabulary.txt',
-      '**/AGENTS.md',
     ],
     vite: {
       optimizeDeps: {

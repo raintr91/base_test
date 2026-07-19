@@ -1,17 +1,18 @@
+# === Repo runtime (member / stack-specific) ===
 node_modules/
 .vitepress/dist/
 .vitepress/cache/
 .harness/progress.md
 .harness/feature_list.json
-platform-repos.local.json
-legacy-repos.local.json
-.cursor/platform-repos.local.json
-.cursor/legacy-repos.local.json
+pnpm-lock.yaml
 
-.kilo/skills/
-.kilo/instructions/
-.kilo/extracts/
-.kilo/command/
+# === Repo-owned plan tooling (not committed; Testkit engines are SSOT) ===
+scripts/cases/
 
+# Toolkit-generated entries (harness .cursor/, agent wiring, platform maps,
+# package install-state) are merged here by each toolkit's `init` — do not
+# hand-maintain them. Template SSOT: platform-dna/TODO-GITIGNORE.md.
+
+# CodeGraph local index (external tool — keep default ignore)
 .codegraph/
 .codegraph-*/

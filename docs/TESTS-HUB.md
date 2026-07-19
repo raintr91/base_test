@@ -10,14 +10,14 @@
 | Suites | `base-tests/suites/` |
 | Vocabulary | `base-tests/catalog/test_case_vocabulary.txt` |
 | Templates | `base-tests/templates/` |
-| Render plan MD | `cd <base-tests-checkout> && pnpm cases:render` |
+| Render plan MD | `cd <base-tests-checkout> && testkit cases:render` (after `testkit init`: `pnpm cases:render`) |
 | Index | `base-tests/registries/tests-index.json` |
 
 ## Lanes
 
 | Lane | Repo | Commands |
 |------|------|----------|
-| **Plans** | `base-tests` | `/testcase` · `/grill-testcase` · `pnpm cases:render` |
+| **Plans** | `base-tests` | `/testcase` · `/grill-testcase` · `testkit cases:render` |
 | **Design** | `base-docs` | `/spec` (bundle only — **no** testcase r1) · grill-docs |
 | **Playwright** | FE (portal, …) | `/test` · `/grill-test` · `pnpm testcase:gen --id …` |
 
@@ -34,6 +34,6 @@ pnpm test:e2e
 
 ## Spec markdown links
 
-Design `docs:render` does **not** emit testcase MD. Spec headers point here / `base-tests` ids. Review MD for cases: `pnpm cases:render` on the tests hub.
+Design `docs:render` does **not** emit testcase MD. Spec headers point here / `base-tests` ids. Review MD for cases: `testkit cases:render` on the tests hub.
 
 See also [HUBS](./HUBS.md).

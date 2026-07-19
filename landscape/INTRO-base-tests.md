@@ -144,10 +144,11 @@ Dùng trên SC (`coverage_plan`) và TC (`coverage[]`) — **không** dùng `typ
 
 ```bash
 pnpm docs:dev         # VitePress + render MD — http://localhost:5173
+# Sau testkit init (scripts sync vào package.json):
 pnpm check:plans      # YAML đủ để gen chưa?
 pnpm check:coverage   # SC hứa facet nào — đã có TC chưa?
 pnpm cases:render     # làm mới MD tiếng Việt
-pnpm check:pilot
+# hoặc: testkit cases:render / cases:check / cases:coverage
 ```
 
 Khi đã grill xong, sang FE:

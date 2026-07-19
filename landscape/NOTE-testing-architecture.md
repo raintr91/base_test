@@ -139,7 +139,7 @@ CAP-* (bắt buộc)
 
 ## Tham chiếu
 
-- Hub: `catalog/lexicon/testcase-taxonomy.en.txt` · `scripts/cases/render-cases.mjs` · pilot `cases/W-AD-AUTH-001/`
+- Hub: `catalog/lexicon/testcase-taxonomy.en.txt` · `testkit cases:render` · pilot `cases/W-AD-AUTH-001/`
 - Docs: `docs/TESTS-HUB.md`
 - Pyramid: https://martinfowler.com/bliki/TestPyramid.html
 - Playwright: https://playwright.dev/docs/best-practices

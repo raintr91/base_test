@@ -3,13 +3,9 @@
   "private": true,
   "type": "module",
   "scripts": {
-    "cases:render": "testkit cases:render --project-root=. --",
-    "check:plans": "testkit cases:check --project-root=. --",
-    "check:coverage": "testkit cases:coverage --project-root=. --",
-    "check:pilot": "node -e \"const fs=require('fs'); const a=['cases/W-AD-AUTH-001/TC-LOGIN-VALID.yaml','suites/smoke.yaml','scenarios/CMP-01-auth/SC-LOGIN.md','targets/CTR-admin-web.md','catalog/lexicon/testcase-taxonomy.en.txt','catalog/locale.yaml','landscape/CAP-admin.md','templates/TC.example.yaml']; for (const f of a) if (!fs.existsSync(f)) { console.error('missing', f); process.exit(1);} console.log('OK_R3_pilot');\"",
-    "docs:render": "pnpm cases:render",
-    "docs:dev": "pnpm cases:render && vitepress dev . --host 0.0.0.0",
-    "docs:build": "pnpm cases:render && vitepress build .",
+    "docs:render": "testkit cases:render --project-root=. --",
+    "docs:dev": "testkit cases:render --project-root=. -- && vitepress dev . --host 0.0.0.0",
+    "docs:build": "testkit cases:render --project-root=. -- && vitepress build .",
     "docs:preview": "vitepress preview . --host 0.0.0.0"
   },
   "devDependencies": {
